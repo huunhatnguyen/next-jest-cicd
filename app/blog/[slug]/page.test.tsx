@@ -15,7 +15,22 @@ it("Ken should be in the document", () => {
   expect(screen.getByText("Ken")).toBeInTheDocument();
 });
 
-it("generateMetadata should return correct metadata", async () => {
+it("Wellcome to HCM should be in the document", () => {
+  render(<Page params={{ slug: "Test" }} />);
+  expect(screen.getByText("Wellcome to HCM")).toBeInTheDocument();
+});
+
+it("renders correctly with an empty slug", () => {
+  render(<Page params={{ slug: "" }} />);
+  expect(screen.getByRole("heading")).toHaveTextContent("Slug: ");
+});
+
+it("generateMetadata should return correct metadata for a given slug", async () => {
   const metadata = await generateMetadata({ params: { slug: "Test" } });
   expect(metadata).toEqual({ title: "Post: Test" });
+});
+
+it("generateMetadata should return correct metadata for an empty slug", async () => {
+  const metadata = await generateMetadata({ params: { slug: "" } });
+  expect(metadata).toEqual({ title: "Post: " });
 });
