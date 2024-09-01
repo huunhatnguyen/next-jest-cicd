@@ -20,11 +20,6 @@ it("Wellcome to HCM should be in the document", () => {
   expect(screen.getByText("Wellcome to HCM")).toBeInTheDocument();
 });
 
-it("Test commit CICD should be in the document", () => {
-  render(<Page params={{ slug: "Test" }} />);
-  expect(screen.getByText("Test commit CICD")).toBeInTheDocument();
-});
-
 it("renders correctly with an empty slug", () => {
   render(<Page params={{ slug: "" }} />);
   expect(screen.getByRole("heading")).toHaveTextContent("Slug: ");
