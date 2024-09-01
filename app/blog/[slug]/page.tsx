@@ -12,7 +12,7 @@ export default function Page({ params }: Params) {
   return (
     <>
       <h1>Slug: {params.slug || "No Slug Provided"}</h1>
-      <p>Ken</p>
+      <p>Ken - Gia Huy</p>
       <p>Wellcome to HCM</p>
     </>
   );
