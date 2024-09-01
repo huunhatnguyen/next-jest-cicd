@@ -14,6 +14,7 @@ export default function Page({ params }: Params) {
       <h1>Slug: {params.slug || "No Slug Provided"}</h1>
       <p>Ken 1 year</p>
       <p>Wellcome to HCM</p>
+      <p>Test commit CICD</p>
     </>
   );
 }
