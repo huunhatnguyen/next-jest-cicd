@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-import { render, screen } from "@testing-library/react";
+import { act,render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import Page, {generateMetadata} from "./page";
 
@@ -10,9 +10,9 @@ it("App Router: Works with dynamic route segments", () => {
   expect(screen.getByRole("heading")).toHaveTextContent("Slug: Test");
 });
 
-it("Ken 1 year should be in the document", () => {
+it("Ken should be in the document", () => {
   render(<Page params={{ slug: "Test" }} />);
-  expect(screen.getByText("Ken 1 year")).toBeInTheDocument();
+  expect(screen.getByText("Ken")).toBeInTheDocument();
 });
 
 it("Wellcome to HCM should be in the document", () => {
