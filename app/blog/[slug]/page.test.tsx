@@ -1,9 +1,12 @@
 /**
  * @jest-environment jsdom
  */
-import { act,render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import Page, {generateMetadata} from "./page";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { act } from 'react-dom/test-utils';
+/* eslint-enable @typescript-eslint/no-unused-vars */
 
 it("App Router: Works with dynamic route segments", () => {
   render(<Page params={{ slug: "Test" }} />);
